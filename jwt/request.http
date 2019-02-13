@@ -1,0 +1,31 @@
+# auth
+
+POST http://localhost:8080/auth
+Content-Type: application/x-www-form-urlencoded
+Accept: */*
+
+user=user&password=1234
+
+###
+
+# public key
+
+GET http://localhost:8080/publickey
+Accept: */*
+
+###
+
+# user
+
+GET http://localhost:8080/user
+Accept: */*
+Authorization: Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWJqZWN0IjoidXNlciIsImFkbWluIjpmYWxzZX0.Y9ghguhQJl-PG4-1pIKbuDzL21FgOj3aQ_4ceoX-8CyJaKtJ_lqDW_SHGgY8sXMPphB5ccDwQEMNUzPD2Q2vd7xP4W5Lh7Fz9USodDBA5PZw-l9drYy2BkS4ljzpnVREZKW1s1pHVYOuQjIaZcKVdb4ibraiSMUtc4VgTfiL_6s
+###
+
+# admin
+
+GET http://localhost:8080/admin
+Accept: */*
+Authorization: Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWJqZWN0IjoidXNlciIsImFkbWluIjpmYWxzZX0.Y9ghguhQJl-PG4-1pIKbuDzL21FgOj3aQ_4ceoX-8CyJaKtJ_lqDW_SHGgY8sXMPphB5ccDwQEMNUzPD2Q2vd7xP4W5Lh7Fz9USodDBA5PZw-l9drYy2BkS4ljzpnVREZKW1s1pHVYOuQjIaZcKVdb4ibraiSMUtc4VgTfiL_6s
+
+###

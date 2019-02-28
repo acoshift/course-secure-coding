@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<div>
+	<button onclick="login()">Login</button>
+	<button onclick="logout()">Logout</button>
+	<div id="content"></div>
+</div>
+
+<script>
+	function login () {
+		fetch('http://localhost:8080/login')
+			.then((resp) => resp.json())
+			.then((data) => {
+				localStorage.setItem('token', data.token)
+				alert('login success')
+			})
+	}
+
+	function logout () {
+		localStorage.removeItem('token')
+		alert('logout success')
+	}
+
+	function loadMessages () {
+		fetch('http://localhost:8080/messages')
+			.then((resp) => resp.json())
+			.then((data) => {
+				const content = document.getElementById('content')
+				data.forEach((it) => {
+					switch (it.type) {
+						case 'text':
+							content.innerHTML += `<div>${it.content}</div>`
+							break
+						case 'image':
+							content.innerHTML += `<img src="${it.content}">`
+							break
+					}
+				})
+			})
+	}
+
+	loadMessages()
+</script>
